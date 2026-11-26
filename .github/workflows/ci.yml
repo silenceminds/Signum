@@ -11,7 +11,7 @@ jobs:
     name: Rust (signum-edge)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
@@ -29,7 +29,7 @@ jobs:
     name: C11 (signum-agent & signum-ctl) - Linux
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install build dependencies
         run: sudo apt-get update && sudo apt-get install -y cmake ninja-build libssl-dev
       - name: Configure and build
