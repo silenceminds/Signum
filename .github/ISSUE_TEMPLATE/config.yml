@@ -6,3 +6,6 @@ contact_links:
   - name: Documentation & Architecture Wiki
     url: https://github.com/silenceminds/Signum/tree/main/docs/wiki
     about: Check the architecture, OCI deployment, and 21-layer security reference before opening a question.
+  - name: GitHub Discussions (Q&A & Ideas)
+    url: https://github.com/silenceminds/Signum/discussions
+    about: Ask deployment questions, share feedback, or propose ideas in Discussions.
