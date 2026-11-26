@@ -1,0 +1,34 @@
+name: Security & Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  rust-audit:
+    name: RustSec Cargo Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rustsec/audit-check@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          cargo-lock: signum-edge/Cargo.lock
+
+  c11-static-analysis:
+    name: C11 Static Analysis (cppcheck)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cppcheck
+        run: sudo apt-get update && sudo apt-get install -y cppcheck
+      - name: Run cppcheck on signum-agent
+        run: cppcheck --enable=warning,performance,portability --std=c11 --error-exitcode=0 -I signum-agent/include signum-agent/src

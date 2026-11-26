@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability Disclosure
+    url: https://github.com/silenceminds/Signum/security/policy
+    about: Please report security vulnerabilities privately via SECURITY.md instead of public issues.
+  - name: Documentation & Architecture Wiki
+    url: https://github.com/silenceminds/Signum/tree/main/docs/wiki
+    about: Check the architecture, OCI deployment, and 21-layer security reference before opening a question.

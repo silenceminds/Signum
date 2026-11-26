@@ -1,0 +1,17 @@
+name: Feature Request
+description: Propose a new capability, security layer, or protocol enhancement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem & Proposed Solution
+      description: What problem does this solve, and how should it fit into Signum?
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security & Performance Considerations
+      description: Any impact on mTLS, SMPv2 framing, locked RAM, or edge filtering.

@@ -1,0 +1,36 @@
+name: Bug Report
+description: Report a bug, crash, or security regression in Signum
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - signum-edge (Rust)
+        - signum-agent (C11)
+        - signum-ctl (C11)
+        - SMPv2 Protocol
+        - Firewall / Deployment Scripts
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS & Toolchain
+      placeholder: "e.g. Ubuntu 24.04 (gcc 13, rustc 1.85) or Windows 11 (MSYS2 UCRT64)"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Clear description of the bug and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs / Reproduction
+      render: shell
