@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: rustsec/audit-check@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          cargo-lock: signum-edge/Cargo.lock
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: taiki-e/install-action@cargo-audit
+      - name: Run cargo audit
+        run: cargo audit --file signum-edge/Cargo.lock
 
   c11-static-analysis:
     name: C11 Static Analysis (cppcheck)
