@@ -158,3 +158,9 @@ python -u .\scripts\stress_400_test.py
 | **End-to-End Suite** | `python .\scripts\e2e_test.py` | Verifies static offline fallback, mTLS + SHA-256 SPKI pinning + SMPv2 GET/POST tunneling, Layer 13 smuggling rejection, Layer 14 outbound secret blocking, and `signum-ctl` (`status`, `replay`, `kill` `0x0A KILL_SWITCH`). |
 | **400-Test Stress & Storm Suite** | `python -u .\scripts\stress_400_test.py` | **399 individual attack/stress vectors + Test #400 simultaneous 399-vector storm**:<br>• **99** control-plane (`:4443`) fuzz, TLS 1.2 downgrade, missing-cert mTLS, and corrupted-SMPv2 tests<br>• **80** HTTP request-smuggling & malformed header tests<br>• **80** invalid webhook HMAC (`X-Hub-Signature-256`) & `alg=none` JWT bypass attempts<br>• **60** split-chunk outbound secret-leak scans (PEM keys, `.env` credentials, DB URLs)<br>• **70** concurrent multiplexed requests (including 48 KB payloads) + **10** `signum-ctl status` calls<br>• **Test #400**: Launches all 399 vectors concurrently in a 64-worker storm, then verifies post-storm `200 OK` recovery and clean `signum-ctl kill` shutdown (`400 passed, 0 failed` verified prior to the final Layer 21 sequencing update). |
 
+---
+
+## 7. Co-Authors & Organization
+
+* **Organization / Co-Author**: [AROM](https://github.com/AROMEmp)
+
