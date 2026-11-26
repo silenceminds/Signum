@@ -1,0 +1,14 @@
+# Rust build artifacts
+signum-edge/target/
+
+# CMake / C11 build artifacts
+signum-agent/build/
+
+# Generated test certificates and private keys
+certs/
+
+# OS & editor files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
