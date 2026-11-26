@@ -160,7 +160,8 @@ python -u .\scripts\stress_400_test.py
 
 ---
 
-## 7. Co-Authors & Organization
+## 7. Co-Authors, Organization & License
 
 * **Organization / Co-Author**: [AROM](https://github.com/AROMEmp)
+* **License**: [Apache License 2.0](LICENSE)
 
